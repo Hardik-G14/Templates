@@ -1,0 +1,54 @@
+<snippet>
+	<content><![CDATA[
+class wGraph{
+private:
+    int V;
+    vector<vector<pair<int,int>>> g;
+
+public:
+    wGraph(int V){
+        this->V = V;
+        g = vector<vector<pair<int,int>>> (V+1);
+    }
+
+    void addEdge(int x,int y,int w,bool undir = true){
+        g[x].push_back({y,w});
+        if(undir)g[y].push_back({x,w});
+    }
+
+    int primsMst(int src){
+        priority_queue<pair<int,int>,vector<pair<int,int>> ,greater<pair<int,int>>> ae;
+        vector<bool> visited(V+1,false);
+
+        int ans=0;
+        ae.push({0,src});
+
+        while(!ae.empty()){
+            ii f = ae.top();
+            ae.pop();
+
+            int currNode = f.sc;
+            int currWei = f.fr;
+
+            if(!visited[currNode]){
+                //if current node is not visited include it in mst set cause we 
+                // already know that it will have the minimum weight as it came from the 
+                // top of priority Queue
+                visited[currNode]=true;
+                ans+=currWei;
+                for(auto &val: g[currNode]){
+                    if(!visited[val.fr]){
+                        ae.push({val.sc,val.fr});
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wgraph</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

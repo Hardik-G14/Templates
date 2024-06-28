@@ -1,0 +1,47 @@
+<snippet>
+	<content><![CDATA[
+//Disjoint Set Union (Data Structure)
+// disjoint set maintain sets
+// done optimization's of union by rank and path compression
+int const DSUMEX = 100010;
+class DSU{
+    int par[DSUMEX];
+    int rank[DSUMEX];
+
+public:
+    DSU(){
+        memset(par,-1,sizeof(par));
+        for(int i=0;i<DSUMEX;i++)rank[i]=1;
+    }
+
+    int find(int i){
+        if(par[i]==-1)return i;
+        //path compression
+        return par[i] = find(par[i]);
+    }
+
+    void union_set(int u,int v){
+        int su = find(u);
+        int sv = find(v);
+        // union by rank
+        if(su!=sv){
+            if(rank[su]<rank[sv])par[su]=sv,rank[sv]+=rank[su];
+            else par[sv]=su,rank[su]+=rank[sv];
+        }
+    }
+
+    bool inSameSet(int u,int v){
+        return find(u)==find(v);
+    }
+
+    int setSize(int u){
+        int par = find(u);
+        return rank[par];
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>DSU</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

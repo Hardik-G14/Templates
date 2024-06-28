@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+vi prefixSumArr(vi&temp){
+    vi ans;
+    if(temp.size()==0)return ans;
+    ans.pb(temp[0]);
+    for(int i=1;i<temp.size();i++){
+        ans.pb(temp[i]+ans.back());
+    }
+    return ans;
+}
+
+vi differenceArr(vi &temp){
+    vi dA;
+    if(temp.size()==0)return dA;
+    dA.pb(temp[0]);
+    for(int i=1;i<temp.size();i++){
+        dA.pb(temp[i]-temp[i-1]);
+    }
+    return dA;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>preSum</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
