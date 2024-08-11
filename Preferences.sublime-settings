@@ -35,7 +35,7 @@
 	/*"gnc_002": false,*/
 	/*"gnc_m00": true,*/
 	/*"gnc_w0m13": true,*/
-	"color_scheme": "Guna.sublime-color-scheme",
+	"color_scheme": "ayu-dark.sublime-color-scheme",
 	/*"gnc_m01": true,*/
 	"gpu_window_buffer": false,
 	/*"gnc_001": false,*/
@@ -86,9 +86,18 @@
 	/*"gnc_h21": true,*/
 	/*"gnc_m06": true,*/
 	/*"gnc_w3m14": true,*/
-	"gnc_h21": true,
+	/*"gnc_h21": true,*/
 	/*"gnc_m05": true,*/
-	"gnc_w4m14": true,
-	"gnc_001": true,
-	"gnc_m06": true,
+	/*"gnc_w4m14": true,*/
+	/*"gnc_001": true,*/
+	/*"gnc_m06": true,*/
+	/*"gnc_m06": true,*/
+	/*"gnc_w3m13": true,*/
+	/*"gnc_h11": true,*/
+	/*"gnc_m07": true,*/
+	/*"gnc_w3m13": true,*/
+	/*"gnc_001": true,*/
+	/*"gnc_h12": true,*/
+	/*"gnc_m05": true,*/
+	/*"gnc_w3m14": true,*/
 }
